@@ -1,0 +1,17 @@
+certifi
+chardet
+click
+flask
+gunicorn
+idna
+itsdangerous
+jinja2
+numpy
+pandas
+python-dateutil
+python-dotenv
+pytz
+requests
+urllib3
+werkzeug
+flask-cors
