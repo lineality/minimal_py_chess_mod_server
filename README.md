@@ -1,0 +1,1 @@
+# minimal_py_chess_mod_server
