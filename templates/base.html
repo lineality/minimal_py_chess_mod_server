@@ -7,9 +7,9 @@
       <p style="font-size:20px; ">  Enter move: space-from and space-to. </p>
       <p style="font-size:20px; ">  E.g. from space d7 to d5: </p>
       <p style="font-size:40px; ">  d7d5 
-        <form style="font-size:40px; action='/tyrell_moved' method="post">
-            <input style="font-size:40px; type="text" name="input_1" placeholder="from to">
-            <input style="font-size:40px; type="submit" value="submit"></form>
+        <form action='/tyrell_moved' method="post">
+            <input type="text" name="input_1" style="font-size:28px; placeholder="from to">
+            <input type="submit" style="font-size:28px; value="submit"></form>
             <br>
         </form>
       <img src="http://0.0.0.0:8050/tyrell" alt="smile" height="600px" width="600px" />
@@ -20,5 +20,3 @@
       <p style="font-size:20px; "> Type "board" to refresh the board. </p>
     </body>
 </html>
-
-
