@@ -1,0 +1,4 @@
+chess
+flask
+gunicorn
+python-dotenv
