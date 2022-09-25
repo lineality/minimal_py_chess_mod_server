@@ -3,7 +3,9 @@
 mod of pip install chess
 
 m Modular
+
 a Amnesiac
+
 t Turnbased
 
 m.a.t. gaming system
@@ -14,11 +16,12 @@ endpoint oriented
 ///////////////////////////////////////////////////////////////
 
 debugging:
+```
 make env
 $ python3
 $ import chess, mat_chess
 $ 
-
+```
 
 
 
@@ -41,12 +44,12 @@ gunicorn app:server --bind=0.0.0.0:80
 ####
 # ubuntu ec2: Steps
 ####
-
+```
 sudo apt update
 sudo apt upgrade
-
+```
 # reboot
-
+```
 sudo apt install python3.10-venv
 sudo apt install authbind
 sudo touch /etc/authbind/byport/80
@@ -59,28 +62,36 @@ python3 -m venv env
 source env/bin/activate
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
-
-# local test
+```
+### local test
+```
 gunicorn app:app -b 0.0.0.0:8050
-
-# aws test
+```
+### aws test
+```
 authbind gunicorn app:app --bind=0.0.0.0:80
-# to Run!! in background
+```
+### to Run!! in background
+```
 authbind nohup gunicorn app:app --bind=0.0.0.0:80 &
+```
 
-
-# local test
+### local test
+```
 python3 -m venv env; source env/bin/activate | python3 -m pip install --upgrade pip; python3 -m pip install -r requirements.txt; authbind gunicorn app:app --bind=0.0.0.0:8050
+```
 
-# or, safer: three parts
+### or, safer: three parts
+```
 python3 -m venv env; source env/bin/activate
 
 python3 -m pip install --upgrade pip; python3 -m pip install -r requirements.txt
 
 gunicorn app:app -b 0.0.0.0:8050
+```
 
-notes:
+## notes:
 1. NO paretheses in file name allowed, will fail silently and cause mayhem
 2. wait: something maybe then port bind takes a few minutes
 3. for debugging check pipfreeze: this can sometimes show a broken system
-
+4. maybe another-another server is needed for tie port 80 to wsgi...
