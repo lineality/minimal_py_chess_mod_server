@@ -17,8 +17,11 @@ $ pip install --upgrade pip
 
 invoke with (the way flask server endpoint will)
 $ python3
->>> import mat_chess
->>> mat_chess.mat_chess("tyrell", "d2d3")
+>>> import chess mat_chess
+
+>>> mat_chess.folder_system_check_setup("tyrell")
+
+>>> mat_chess.play_mat_chess("tyrell", "d2d3")
 
 
 Note: individual move >>> board.push_uci("d2d4")
@@ -552,10 +555,16 @@ def folder_system_check_setup(gamename):
         os.mkdir(f'games/{gamename}/archive')
 
     # setup: make archive folder if none exists 
-    if not os.path.exists('current_board.svg'):
+    if not os.path.exists(f'games/{gamename}/current_board.svg'):
         board = chess.Board()
         chess.svg.board(board)
-        
+        # Move Image to folder for this specific game
+        try: 
+            os.rename('current_board.svg', f'games/{gamename}/current_board.svg')
+            print("during folder_system_check_setup: new picture_moved: OK!")
+
+        except:
+            print('new setup failed to make board')
 
 # variables
 gamelog_movelist = [] 
