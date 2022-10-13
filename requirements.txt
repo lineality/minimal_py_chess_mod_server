@@ -1,4 +1,4 @@
-chess
 flask
 gunicorn
 python-dotenv
+chess

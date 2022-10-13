@@ -1,0 +1,46 @@
+TODO:
+- comments...add comments into report...
+- maybe...office hours in report
+
+- is there a way to reboot the server?
+  maybe flask is doomed...what else would work?
+  other non-chess games?
+    
+- do a shakespeare game: 1st folio quotes
+- game history now broken? what it shows it report looks wrong...
+
+- set up a testing folding including trial game logs for easy running
+e.g. setting up checks, checkmates, stalemates to test. 
+
+- still sometime starting out it glitched getting folders and files
+and images set up, but doing a few "new" "board" fixes it...??? 
+
+- add user requests site delete their user cookies option "clear cookies"
+- mobile user-id login might be ideal: not connected with IP but connected with that browser cookie
+- play vs. various AI systems
+- starting from a modified game-log does not work...why?
+
+
+
+
+Done:
+2022.09.24 17:33 ET Update matrix_board fixed, other two needed
+2022.09.24 18:29 ET Update matrix_moved fixed: hooked up to tyrell, next fix matrix
+2022.09.26 nginx and aws url https now online, matrix view NOT working
+2022.09.27 user ip whitelist check, added more input sanitizer
+2022.09.28 added/fixed report (thick) vs normal game (thin) interface,
+            added last-legal-move picture, 
+            moved the picture-moving function into the main py script
+            (no longer in app.py)
+            report works
+            checkmate colors work
+            fixed board not saving to folder in 'new'
+2022.10.02  still working on game-set
+            still working on cookie id system
+2022.10.06 partly done making list-type json
+2022.10.07 added ip-hash function including timestamp (needs checking)
+2022.10.10 fixed pawn graduation
+2022.10.10 fixed input bugs related to pawn graduation mess "reporrt"
+           maybe fixed mysterious \n newline added to move log file
+           added main games back in
+           fixed unreadable hyperlink colour in reports
