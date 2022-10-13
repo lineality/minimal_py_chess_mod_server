@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <body>
+        <tt>
+          <body style="background-color:black;">
+          <font color="orange">  
+          <div style="line-height:1px">
+            <p style="font-size:75px; ">  Tyrell : Report </p>
+            <p style="font-size:30px; ">  Enter move coordinates: space-from & space-to. </p>
+            <p style="font-size:30px; ">  </p>
+            <p style="font-size:30px; ">  E.g. From space d7 to space d5 is entered as: </p>
+            <p style="font-size:60px; ">  d7d5 </p>
+            <p style="font-size:35px; "> Non-Move input Options: </p>
+            <p style="font-size:20px; "> "new" -> For new game: start from scratch </p>
+            <p style="font-size:20px; "> "board" -> To refresh the board image </p>
+            <p style="font-size:20px; "> "report" -> For game data </p> 
+          </div>
+          
+            <form action='/tyrell_moved' method="post">
+            <input type="text" name="input_1" style="font-size:50px;" placeholder="type your move here">
+            <input type="submit" style="font-size:50px;" value="enter"></form>
+                <br>
+            </form>
+            <p style="font-size:60px; ">  Current Board </p>
+            <img src="https://y0urm0ve.com/tyrell_board" alt="game board pending" height="850px" width="850px" />
+          
+
+            <p style="font-size:30px; "> </p>        
+            <p style="font-size:30px; "> Whose turn is it? : White
+            <br> Game Over : False 
+            <br> In Check : False 
+            <br> Checkmate : False 
+            <br> A Stalemate : False 
+            </p>
+            
+            <p style="font-size:30px; "> The History : ['d2d4', 'f7f5', 'e2e4', 'f5e4', 'd1h5', 'g7g6'] </p>
+            <p style="font-size:10px; "> Legal Moves List : (Qxh7, Qh6, Qxg6+, Qg5, Qf5, Qe5, Qd5, Qc5, Qb5, Qa5, Qh4, Qg4, Qh3, Qf3, Qe2, Qd1, Nh3, Nf3, Ne2, Ba6, Bb5, Bc4, Bd3, Be2, Ke2, Kd2, Kd1, Bh6, Bg5, Bf4, Be3, Bd2, Nc3, Na3, Nd2, d5, h3, g3, f3, c3, b3, a3, h4, g4, f4, c4, b4, a4) </p>
+            <p style="font-size:30px; "> </p>
+
+        <p style="font-size:60px; "> Last Legal Move Board </p>
+        <img src="https://y0urm0ve.com/tyrell_last_legal_move" alt="game board pending" height="850px" width="850px" />
+            
+        <p style="font-size:20px; "> Play <a href="https://y0urm0ve.com/tyrell" style="color: #8ebf42">y0urm0ve.com/tyrell</a> </p>
+        <p style="font-size:20px; "> Report <a href="https://y0urm0ve.com/tyrell_report" style="color: #8ebf42">y0urm0ve.com/tyrell_report</a> </p>
+        <p style="font-size:20px; "> Board <a href="https://y0urm0ve.com/tyrell_board" style="color: #8ebf42">y0urm0ve.com/tyrell_board</a> </p>
+        <p style="font-size:20px; "> Legal Moves <a href="https://y0urm0ve.com/tyrell_last_legal_move" style="color: #8ebf42">y0urm0ve.com/tyrell_last_legal_move</a> </p>
+        <p style="font-size:20px; "> Ramen <a href="https://y0urm0ve.com/tyrell_ramen" style="color: #8ebf42">y0urm0ve.com/tyrell_ramen</a> </p>
+        
+        </body>
+    </html>
+        
