@@ -1129,6 +1129,8 @@ def chess_samplegame():
     print(f""" back from <- authenticate_user_true_false__ip_only( {gamename} )
     "player_is_authenticated_response: ", {player_is_authenticated_response}""")
     
+    # because sample game is public-sample:
+    player_is_authenticated_response = True
     
     ###################################################
     # Go to Game | or Setup | or Generic No Page Found
