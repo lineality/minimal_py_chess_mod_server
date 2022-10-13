@@ -389,7 +389,7 @@ def check_ip_whitelist(gamename, user_ip):
     Example Use: Setting the result as a variable (optional)
     
     # set inputs:
-    gamename = "chess_samplegame"
+    gamename = f"{gamename}"
     the_user_is = get_user_ip()
     
     # run the check:
@@ -410,7 +410,7 @@ def check_ip_whitelist(gamename, user_ip):
 
  
     # Opening JSON file
-    with open(f'games/{gamename}/{gamename}_game_setup_dictionary.json', "r") as file_object:
+    with open(f'games/{gamename}/{gamename}_game_setup_dictionary.json', 'r') as file_object:
      
         # Reading from json file
         game_setup_data = json.load( file_object )
@@ -427,14 +427,14 @@ def check_ip_whitelist(gamename, user_ip):
         game_setup_timestamp = game_setup_data['timestamp']
         
         # terminal inspection
-        # print(f"""ip_hash_list type: {type(ip_hash_list)}, ip_hash_list content: {ip_hash_list} """)
+        print(f"""ip_hash_list type: {type(ip_hash_list)}, ip_hash_list content: {ip_hash_list} """)
 
         # make a new hash of the current user IP (for later comparison)
         hashed_user_ip =  make_hash(user_ip, game_setup_timestamp)
 
-        # print("user_ip -> ", user_ip)
-        # print("game_setup_timestamp -> ", game_setup_timestamp)        
-        # print("new hashed_user_ip -> ", hashed_user_ip)
+        print("user_ip -> ", user_ip)
+        print("game_setup_timestamp -> ", game_setup_timestamp)        
+        print("new hashed_user_ip -> ", hashed_user_ip)
 
         ####################################
         # check if ip(hash) is in whitelist
@@ -1026,43 +1026,40 @@ def game_setup_endpoint():
     ######################################
     # check to see if game exists already
     ######################################
-    
+
     # setup: make archive folder if none exists 
     if os.path.exists(f'games/{gamename}'):
         return "Try again with a different gamename."
-        
+
     first_folder_system_setup( gamename )
-        
+
     # get time
     timestamp_raw = datetime.utcnow()
     # make readable string
     timestamp = timestamp_raw.strftime('%Y%m%d%H%M%S%f')
-        
-
-
 
     # game_setup_dict to be written
     game_setup_dict = {
         "gamename": gamename,
-        "ip_whitelist":form_data['ip_whitelist'],
+        "ip_whitelist": form_data['ip_whitelist'],
         "game_duration_in_days": form_data['game_duration_days'],
         "timestamp": timestamp,
         "hashed_cookies": []
         }
-        
+
     ##############################################
     # reformat as list of hashed values (in json)
     ##############################################
     input_list = game_setup_dict['ip_whitelist'].split(',')
 
     for index, value in enumerate(input_list):
-        input_list[index] = make_hash( value, game_setup_dict['timestamp'])
+        input_list[index] = make_hash( value, game_setup_dict['timestamp'] )
 
     game_setup_dict['ip_whitelist'] = input_list
 
     # exporting json
     json_object = json.dumps(game_setup_dict, indent=0)
-    
+
     #########################    
     # Writing to sample.json
     #########################
@@ -1076,7 +1073,7 @@ def game_setup_endpoint():
     #########################
     # make files
     print("game setup: attempting Writing .html / routes")
-    #try:
+    # try:
     make_game_setup_endpoint_routes( gamename )
     make_game_setup_html( gamename )
     #except Exception as e:
@@ -1132,7 +1129,6 @@ def chess_samplegame():
     print(f""" back from <- authenticate_user_true_false__ip_only( {gamename} )
     "player_is_authenticated_response: ", {player_is_authenticated_response}""")
     
-    player_is_authenticated_response == True
     
     ###################################################
     # Go to Game | or Setup | or Generic No Page Found
@@ -1281,7 +1277,7 @@ def tyrell():
     # Game Name
     ############
     
-    gamename = 'chess_samplegame'
+    gamename = 'tyrell'
 
     # terminal inspection
     print(f"""Starting: def {gamename}(): / 
@@ -1322,7 +1318,7 @@ def tyrell():
 @app.route('/tyrell_moved', methods=['POST'])
 def tyrell_moved():
 
-    gamename = "chess_samplegame"
+    gamename = "tyrell"
 
     json_obj = {'input_1': request.values['input_1']}
     
@@ -1449,7 +1445,7 @@ def trident():
     # Game Name
     ############
     
-    gamename = 'chess_samplegame'
+    gamename = 'trident'
 
     # terminal inspection
     print(f"""Starting: def {gamename}(): / 
@@ -1490,7 +1486,7 @@ def trident():
 @app.route('/trident_moved', methods=['POST'])
 def trident_moved():
 
-    gamename = "chess_samplegame"
+    gamename = "trident"
 
     json_obj = {'input_1': request.values['input_1']}
     
