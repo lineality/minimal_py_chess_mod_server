@@ -1371,14 +1371,14 @@ def tyrell_moved():
 # show current board
 @app.route('/tyrell_board')
 def tyrell_board():
-    filename = 'games/chess_samplegame/current_board.svg'
+    filename = 'games/tyrell/current_board.svg'
     return send_file(filename, mimetype='image/svg+xml')
 
 #####################
 # show current board
 @app.route('/tyrell_last_legal_move')
 def tyrell_last_legal_move():
-    filename = 'games/chess_samplegame/last_legal_move.svg'
+    filename = 'games/tyrell/last_legal_move.svg'
     return send_file(filename, mimetype='image/svg+xml')
 
 ######################
@@ -1388,8 +1388,8 @@ def tyrell_ramen():
     # # for whatever recent
     # board_string = str( mast_chess.raw_board() )
 
-    # for chess_samplegame game
-    with open(f'games/chess_samplegame/current_board_string.txt', "r") as file_object:
+    # for tyrell game
+    with open(f'games/tyrell/current_board_string.txt', "r") as file_object:
         # read file content
         board_string = file_object.read()
 
@@ -1535,14 +1535,14 @@ def trident_moved():
 # show current board
 @app.route('/trident_board')
 def trident_board():
-    filename = 'games/chess_samplegame/current_board.svg'
+    filename = 'games/trident/current_board.svg'
     return send_file(filename, mimetype='image/svg+xml')
 
 #####################
 # show current board
 @app.route('/trident_last_legal_move')
 def trident_last_legal_move():
-    filename = 'games/chess_samplegame/last_legal_move.svg'
+    filename = 'games/trident/last_legal_move.svg'
     return send_file(filename, mimetype='image/svg+xml')
 
 ######################
@@ -1552,8 +1552,8 @@ def trident_ramen():
     # # for whatever recent
     # board_string = str( mast_chess.raw_board() )
 
-    # for chess_samplegame game
-    with open(f'games/chess_samplegame/current_board_string.txt', "r") as file_object:
+    # for trident game
+    with open(f'games/trident/current_board_string.txt', "r") as file_object:
         # read file content
         board_string = file_object.read()
 
