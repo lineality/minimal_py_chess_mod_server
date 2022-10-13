@@ -57,9 +57,9 @@ import json
 ############################
 # Set Your Server URL Here
 ############################
-# server_url = "https://y0urm0ve.com"
+server_url = "https://y0urm0ve.com"
 # server_url = "http://localhost:5000"
-server_url = "http://0.0.0.0:8050"
+# server_url = "http://0.0.0.0:8050"
 # server_url = "http://127.0.0.1:5000"
 
 
@@ -249,7 +249,7 @@ def make_hash(input_string, timestamp_string):
     timestamp = timestamp_raw.strftime('%Y%m%d%H%M%S%f')
     """
 
-    string_to_hash = input_string + timestamp_string
+    string_to_hash = str(input_string) + str(timestamp_string)
 
     hash = 1
     for this_character in string_to_hash:
@@ -780,7 +780,7 @@ def make_game_setup_html( gamename ):
                 <br>
             </form>
                   </div>
-          <img src="http://0.0.0.0:8050/{gamename}_board" alt="game board pending" height="850px" width="850px" />
+          <img src="https://y0urm0ve.com/{gamename}_board" alt="game board pending" height="850px" width="850px" />
         </object>
         </body>
     </html>
