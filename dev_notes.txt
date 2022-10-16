@@ -1,0 +1,65 @@
+TODO:
+
+maybe just go to site/
+your move / chess
+then you pick name of added game...?
+(to avoid restart issue)
+use modular endpoints...
+
+- maybe try just ramen for self-made-games...
+
+- make ascii dungeon game based on chess M.A.S.T. system
+- 
+
+- maybe...office hours in report, comments... comments into report..
+
+- is there a way to reboot the server?
+  maybe flask is doomed...what else would work?
+  other non-chess games?
+    
+- do a shakespeare game: 1st folio quotes
+- game history now broken? what it shows it report looks wrong...
+
+- still sometime starting out it glitched getting folders and files
+and images set up, but doing a few "new" "board" fixes it...??? 
+
+- add user requests site delete their user cookies option "clear cookies"
+- mobile user-id login might be ideal: not connected with IP but connected with that browser cookie
+- play chess vs. various AI systems
+
+- redo graphics with vanill python make bitmap/png PIL pillow (python image library)
+- redo minimal chess backend
+
+
+Done:
+2022.09.24 17:33 ET Update matrix_board fixed, other two needed
+2022.09.24 18:29 ET Update matrix_moved fixed: hooked up to tyrell, next fix matrix
+2022.09.26 nginx and aws url https now online, matrix view NOT working
+2022.09.27 user ip whitelist check, added more input sanitizer
+2022.09.28 added/fixed report (thick) vs normal game (thin) interface,
+            added last-legal-move picture, 
+            moved the picture-moving function into the main py script
+            (no longer in app.py)
+            report works
+            checkmate colors work
+            fixed board not saving to folder in 'new'
+2022.10.02  still working on game-set
+            still working on cookie id system
+2022.10.06 partly done making list-type json
+2022.10.07 added ip-hash function including timestamp (needs checking)
+2022.10.10 fixed pawn graduation
+2022.10.10 fixed input bugs related to pawn graduation mess "reporrt"
+           maybe fixed mysterious \n newline added to move log file
+           added main games back in
+           fixed unreadable hyperlink colour in reports
+2022.10.13 added log backup
+           added print archive of games
+           deployed to server updates
+           only thing still not working is auto-restart server
+           made two update-setup for existing games
+           uploaded function-routes, ip-removal, not-print-ip
+2022.10.14 fixed repeate-of-last-move edge case (prevent trying
+            same move twice (or browser double issueing etc)
+            reworked how move-log is processed and stored
+            
+           
