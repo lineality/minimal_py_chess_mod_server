@@ -519,10 +519,14 @@ def export_svg_file(svg_input, file_path):
 '''
 
 def makefile():
-    with open('env/lib/python3.10/site-packages/chess/svg.py', "w") as file_object:
+    import sys
+    
+    this_python_version = sys.version[:4]
+
+    with open(f'env/lib/python{this_python_version}/site-packages/chess/svg.py', "w") as file_object:
        # write file content
        file_object.write( newsvg )
        
-    with open('env/lib64/python3.10/site-packages/chess/svg.py', "w") as file_object:
+    with open(f'env/lib64/python{this_python_version}/site-packages/chess/svg.py', "w") as file_object:
        # write file content
        file_object.write( newsvg )
