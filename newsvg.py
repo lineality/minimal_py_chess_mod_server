@@ -502,20 +502,19 @@ def board(board: Optional[chess.BaseBoard] = None, *,
     return SvgWrapper(ET.tostring(svg).decode("utf-8"))
 
 
-
 def export_svg_file(svg_input, file_path):
     """
     Save svg as utf8 string to file_path
     """
 
     try:
-        file_varible = open(file_path, 'w')
+        file_variable = open(file_path, 'w')
 
     except IOError as e:
         print(str(e))
 
-    file_varible.write( svg_input )
-    file_varible.close() 
+    file_variable.write( svg_input )
+    file_variable.close() 
 '''
 
 def makefile():
